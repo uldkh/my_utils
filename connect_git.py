@@ -20,6 +20,7 @@ def github_auth(persistent_key: bool):
   public_key_path = private_key_path + ".pub"
 
   if not os.path.exists(os.path.expanduser(private_key_path)):
+    print("here")
     fresh_key = True
     os.system(f"ssh-keygen -t ed25519 -f {private_key_path} -N ''")
   else:
